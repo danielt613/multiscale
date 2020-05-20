@@ -50,7 +50,7 @@ class OperatorAsAutogradFunction(torch.autograd.Function):
         super(OperatorAsAutogradFunction, self).__init__()
         self.operator = operator
     
-    @staticmethod
+    
     def forward(self, input):
         """Evaluate forward pass on the input.
         Parameters
@@ -107,6 +107,7 @@ class OperatorAsAutogradFunction(torch.autograd.Function):
         tensor = torch.from_numpy(np.array(op_result, copy=False, ndmin=1))
         tensor = tensor.to(input.device)
         return tensor
+    
     
     def backward(self, grad_output):
         r"""Apply the adjoint of the derivative at ``grad_output``.
@@ -263,7 +264,7 @@ class OperatorAsModule(torch.nn.Module):
         """The wrapped ODL operator."""
         return self.op_func.operator
     
-    @staticmethod
+    
     def forward(self, x):
         """Compute forward-pass of this module on ``x``.
         Parameters
