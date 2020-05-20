@@ -108,7 +108,6 @@ class OperatorAsAutogradFunction(torch.autograd.Function):
         tensor = tensor.to(input.device)
         return tensor
     
-    @staticmethod
     def backward(self, grad_output):
         r"""Apply the adjoint of the derivative at ``grad_output``.
         This method is usually not called explicitly but as a part of the
