@@ -1,7 +1,8 @@
 import numpy as np
 #import matplotlib.pyplot as plt
 import odl
-from pyOperator import OperatorAsModule
+#from pyOperator import OperatorAsModule
+from odl.contrib.torch import OperatorAsModule
 import torch
 from torch import nn
 from torch import optim
